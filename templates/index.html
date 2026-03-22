@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Study Assistant</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #0f172a, #1e3a8a);
+        margin: 0;
+        padding: 0;
+        color: white;
+    }
+
+    /* MAIN CONTAINER */
+    .container {
+        width: 65%;
+        margin: 50px auto;
+        padding: 30px;
+        border-radius: 20px;
+        background: rgba(255,255,255,0.05);
+        backdrop-filter: blur(15px);
+        box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+        animation: fadeIn 0.8s ease-in;
+    }
+
+    /* TITLE */
+    h2 {
+        text-align: center;
+        color: white;
+        font-weight: 600;
+        text-shadow: 0 0 15px #6366f1;
+    }
+
+    /* TEXTAREA */
+    textarea {
+        width: 100%;
+        padding: 12px;
+        border-radius: 10px;
+        border: none;
+        background: #1e293b;
+        color: white;
+        font-size: 14px;
+        outline: none;
+        transition: 0.3s;
+    }
+
+    textarea:focus {
+        box-shadow: 0 0 10px #6366f1;
+    }
+
+    /* BUTTON */
+    button {
+        margin-top: 10px;
+        padding: 10px 25px;
+        background: #6366f1;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 15px;
+        transition: all 0.3s ease;
+    }
+
+    button:hover {
+        background: #4f46e5;
+        transform: scale(1.05);
+        box-shadow: 0 0 15px #6366f1;
+    }
+.sidebar button {
+    width:100%;
+    margin-bottom:10px;
+    background:#1e293b;
+}
+
+.sidebar button:hover {
+    background:#6366f1;
+    transform:translateX(5px);
+}    
+
+    /* CARDS */
+    .card {
+        margin-top: 20px;
+        padding: 20px;
+        border-radius: 15px;
+        background: rgba(255,255,255,0.05);
+        backdrop-filter: blur(10px);
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 0 15px rgba(99,102,241,0.5);
+    }
+
+    /* RESPONSE */
+    .response {
+        border-left: 5px solid #6366f1;
+    }
+
+    /* MEMORY TAGS */
+    .memory {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .memory span {
+        background: #ef4444;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 13px;
+    }
+
+    /* INSIGHT */
+    .insight {
+        border-left: 5px solid #22c55e;
+    }
+
+    /* LIST */
+    ul {
+        text-align: left;
+        padding-left: 20px;
+    }
+
+    /* ANIMATION */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(15px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    h1 {
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #6366f1; }
+    to { text-shadow: 0 0 20px #818cf8; }
+}
+    </style>
+</head>
+<body>
+
+<div style="display:flex; height:100vh;">
+
+    <!-- 🔥 LEFT SIDEBAR -->
+    <div class="sidebar" style="width:220px; background:#020617; padding:20px;">
+        <h3 style="color:#6366f1;">🚀 Companion</h3>
+
+        <button onclick="location.href='/'">💬 Chat</button><br><br>
+        <button onclick="location.href='/practice'">💻 Practice</button><br><br>
+        <button onclick="location.href='/interview'">🎤 DSA Interview</button><br><br>
+        <button onclick="location.href='/core-interview'">🧠 Core Interview</button><br><br>
+        <button onclick="location.href='/dashboard'">📊 Dashboard</button>
+    </div>
+
+
+    <!-- 💬 CENTER CHAT -->
+    <div style="flex:2; padding:20px; overflow:auto;">
+
+        <h2 style="
+        text-align:center;
+    font-size:26px;
+    font-weight:600;
+    text-shadow:0 0 10px #6366f1;">
+    Zenvyra
+    </h2>
+
+<p style="text-align:center; color:#94a3b8;">
+Learn → Practice → Improve
+</p>
+
+        <!-- INPUT -->
+        <form method="POST">
+
+    <div style="
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+height:60vh;
+text-align:center;
+">
+
+    <!-- 🔥 HERO TEXT -->
+    <h1 style="
+    font-size:32px;
+    font-weight:600;
+    text-shadow:0 0 10px #6366f1;">
+        Welcome to Zenvyra 🚀
+    </h1>
+
+    <p style="color:#94a3b8; margin-bottom:20px;">
+        Learn smarter, grow faster
+    </p>
+
+    <!-- 🔥 CENTER INPUT -->
+    <form method="POST" style="width:100%; display:flex; justify-content:center;">
+
+        <div style="
+width:90%;
+max-width:1100px;
+display:flex;
+gap:10px;
+">
+
+    <textarea name="question" rows="2"
+        placeholder="Ask anything..."
+        oninput="this.style.height='auto'; this.style.height=this.scrollHeight+'px'"
+        style="
+        flex:1;
+        padding:16px;
+        border-radius:14px;
+        background:#1e293b;
+        color:white;
+        border:none;
+        outline:none;
+        min-height:60px;
+        font-size:15px;">
+    </textarea>
+
+    <button type="submit" style="
+        padding:12px 22px;
+        border-radius:12px;
+        white-space:nowrap;">
+        Ask
+    </button>
+
+</div>
+
+    </form>
+
+</div>
+</form>
+
+        <!-- RESPONSE -->
+        {% if response %}
+<div class="card" style="margin-top:20px;">
+    <b>🤖 Assistant</b>
+    <p style="white-space: pre-wrap; margin-top:10px;">
+        {{ response }}
+    </p>
+</div>
+{% endif %}
+
+
+    <!-- 🧠 RIGHT PANEL -->
+    <div style="display:flex; flex-direction:column; gap:15px;">
+
+    <div style="display:flex; gap:15px;">
+
+        <div class="card" style="flex:1;">
+            <h3>🧠 Weak Areas</h3>
+            <p>{{ memory[-1] if memory else "No data yet" }}</p>
+        </div>
+
+        <div class="card" style="flex:1;">
+            <h3>📈 Interactions</h3>
+            <p>{{ count }}</p>
+        </div>
+
+    </div>
+
+    <div class="card">
+        <h3>📌 Recommendation</h3>
+        <p>Practice {{ memory[-1] if memory else "basics" }}</p>
+    </div>
+
+</div>
+
+</div>
+
+</body>
+</html>

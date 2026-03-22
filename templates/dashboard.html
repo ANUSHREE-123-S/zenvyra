@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zenvyra Dashboard</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: linear-gradient(135deg,#0f172a,#1e3a8a);
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            width: 220px;
+            background: #020617;
+            padding: 20px;
+            position: fixed;
+            height: 100vh;
+        }
+
+        .sidebar button {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            background: #1e293b;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .sidebar button:hover {
+            background: #6366f1;
+            transform: translateX(5px);
+        }
+
+        /* MAIN */
+        .main {
+            margin-left: 240px;
+            padding: 30px;
+        }
+
+        /* CARD */
+        .card {
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 15px rgba(99,102,241,0.5);
+        }
+
+        input {
+            padding: 8px;
+            border-radius: 8px;
+            border: none;
+        }
+
+        button {
+            padding: 8px 15px;
+            border-radius: 8px;
+            border: none;
+            background: #6366f1;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #4f46e5;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- 🔥 SIDEBAR -->
+<div class="sidebar">
+
+    <h3 style="color:#6366f1;">🚀 Zenvyra</h3>
+    <p style="font-size:12px; color:#94a3b8;">Companion</p>
+
+    <button onclick="location.href='/'">💬 Chat</button>
+    <button onclick="location.href='/practice'">💻 Practice</button>
+    <button onclick="location.href='/interview'">🎤 DSA Interview</button>
+    <button onclick="location.href='/core-interview'">🧠 Core Interview</button>
+    <button onclick="location.href='/dashboard'">📊 Dashboard</button>
+
+</div>
+
+<!-- 🔥 MAIN CONTENT -->
+<div class="main">
+
+    <h1>📊 Dashboard</h1>
+
+    <div style="display:flex; gap:20px;">
+
+        <!-- LEFT: PLAN + TASKS -->
+        <div style="flex:2;">
+
+            <!-- PLAN -->
+            <div class="card">
+                <h2>📅 Personalized Plan</h2>
+
+                <ul>
+                {% for item in plan %}
+                    <li>🚀 {{ item }}</li>
+                {% endfor %}
+                </ul>
+            </div>
+
+            <!-- TASKS -->
+            <div class="card">
+                <h2>📝 Your Daily Tasks</h2>
+
+                <form method="POST">
+                    <input type="text" name="task" placeholder="Add your task...">
+                    <button>Add</button>
+                </form>
+
+                <ul>
+                    {% for task in tasks %}
+                        <li>✅ {{ task }}</li>
+                    {% endfor %}
+                </ul>
+
+                <form method="POST">
+                    <input type="hidden" name="action" value="clear">
+                    <button style="background:#ef4444;">🗑 Clear Tasks</button>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- RIGHT: MEMORY -->
+        <div style="flex:1;">
+
+            <div class="card">
+                <h2>⚠ Weak Areas</h2>
+
+                {% if memory %}
+                    {% for item in memory %}
+                        <p>❌ {{ item }}</p>
+                    {% endfor %}
+                {% else %}
+                    <p>No data yet</p>
+                {% endif %}
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
