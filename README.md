@@ -9,120 +9,13 @@ Unlike traditional AI tools that give the same answers every time, Zenvyra **lea
 ## 🧠 Core Idea
 
 Most AI systems:
-- Forget previous interactions ❌  
-- Give generic answers ❌  
+- Forget previous interactions  
+- Give generic answers  
 
 Zenvyra:
-- Tracks user weaknesses ✅  
-- Adapts explanations ✅  
-- Provides personalized learning ✅  
-
-> AI shouldn’t just respond — it should evolve with the user.
-
----
-
-## ⚙️ Features
-
-### 💬 Smart Chat
-- Structured responses (Explanation, Example, Insight, Suggestion)
-- Personalized using memory
-
----
-
-### 🧠 Memory-Based Learning
-- Tracks weak areas (Recursion, Arrays, etc.)
-- Uses memory to improve future responses
-- Inspired by Hindsight memory systems
-
----
-
-### 💻 Practice Mode
-- Problem solving environment
-- 3-Level Hint System:
-  - Level 1 → small hint
-  - Level 2 → approach
-  - Level 3 → near solution
-- Solution evaluation:
-  - Logic
-  - Time Complexity
-  - Clarity
-
----
-
-### 🎤 Mock Interview (DSA)
-- AI acts like real interviewer
-- Evaluates answers
-- Gives structured feedback
-
----
-
-### 🧠 Core Subject Interview
-- Domains:
-  - Python
-  - Operating Systems
-  - Computer Networks
-- Domain-specific evaluation
-
----
-
-### 📊 Dashboard
-- Weak areas tracking
-- Personalized study plan
-- Daily task management
-
----
-
-## 🔄 How It Works
-
-1. User interacts with system  
-2. Weak areas are identified  
-3. Memory is stored  
-4. Future responses adapt based on history  
-
----
-
-## 🔥 Before vs After
-
-**Before (No Memory):**
-- Same answers for every user  
-- No learning  
-
-**After (Zenvyra):**
-- Personalized explanations  
-- Focus on weak areas  
-- Adaptive learning experience  
-
----
-
-## 🛠 Tech Stack
-
-- Python (Flask)
-- Groq API (LLM)
-- Hindsight-inspired memory system
-- HTML, CSS (Custom UI)
-
----
-
-## ⚡ Setup Instructions
-
-1. Clone the repo:# 🚀 Zenvyra — Smart Learning Companion
-
-Zenvyra is a **learning companion** that adapts to users based on their past interactions.
-
-Unlike traditional AI tools that give the same answers every time, Zenvyra **learns from user behavior**, tracks weak areas, and improves guidance over time.
-
----
-
-## 🧠 Core Idea
-
-Most AI systems:
-- Forget previous interactions ❌  
-- Give generic answers ❌  
-
-Zenvyra:
-- Tracks user weaknesses ✅  
-- Adapts explanations ✅  
-- Provides personalized learning ✅  
+- Tracks user weaknesses   
+- Adapts explanations 
+- Provides personalized learning  
 
 > AI shouldn’t just respond — it should evolve with the user.
 
